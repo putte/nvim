@@ -1,3 +1,6 @@
+-- disable, vim.lsp.config not supported in neovim 10.4
+if true then return end
+
 vim.lsp.config('*', {
     root_markers = { '.git' },
 })
