@@ -6,7 +6,7 @@ This document provides a simple and organized overview of all the custom keybind
 
 | Mode | Key             | Action                                                                                      |
 |------|-----------------|---------------------------------------------------------------------------------------------|
-| `n`  | `<leader>cd`    | Open Ex mode (`:Ex`)                                                                        |
+| `n`  | `<leader>z`     | Open Ex mode (`:Ex`)                                                                        |
 | `n`  | `J`             | Join lines while keeping the cursor in place                                                |
 | `n`  | `<C-d>`         | Scroll half-page down and keep the cursor centered                                          |
 | `n`  | `<C-u>`         | Scroll half-page up and keep the cursor centered                                            |
