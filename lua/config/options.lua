@@ -11,6 +11,16 @@ set.shiftwidth = 4
 set.autoindent = true
 set.expandtab = true
 
+-- whitespaces
+set.list = true
+set.listchars = {
+    tab = "▸ ",
+    trail = "·",
+    extends = "⟩",
+    precedes = "⟨",
+    nbsp = "␣",
+}
+
 -- search settings
 set.ignorecase = true
 set.smartcase = true
@@ -53,3 +63,4 @@ set.incsearch = true
 
 -- faster cursor hold
 set.updatetime = 50
+

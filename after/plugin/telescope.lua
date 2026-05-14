@@ -29,3 +29,5 @@ end, { desc = "Find current string" })
 vim.keymap.set("n", "<leader>fi", function()
     builtin.find_files({ cwd = "~/.config/nvim/" })
 end)
+
+
