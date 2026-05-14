@@ -85,6 +85,7 @@ This document provides a simple and organized overview of all the custom keybind
 | `n`       | `gr`       | Show references                                                                             |
 | `n`       | `gs`       | Show signature help                                                                         |
 | `n`       | `gl`       | Show diagnostics in a floating window                                                       |
+| `n`       | `gL`       | Show all diagnostics in a list                                                              |
 | `n`       | `<F2>`     | Rename symbol                                                                               |
 | `n`, `x`  | `<F3>`     | Format code asynchronously                                                                 |
 | `n`       | `<F4>`     | Show code actions                                                                           |

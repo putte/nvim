@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('n', 'gr', vim.lsp.buf.references)
         map('n', 'gs', vim.lsp.buf.signature_help)
         map('n', 'gl', vim.diagnostic.open_float)
+        map('n', 'gL', vim.diagnostic.setloclist)
         map('n', '<F2>', vim.lsp.buf.rename)
         map({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end)
         map('n', '<F4>', vim.lsp.buf.code_action)
@@ -186,20 +187,23 @@ vim.lsp.config['rust_analyzer'] = {
 }
 
 -- C / C++ via clangd
+local compile_commands_location = vim.env.CSP_ROOT or '~/compile_commands'
 vim.lsp.config['clangd'] = {
     cmd = {
         'clangd',
+        '--compile-commands-dir=' .. compile_commands_location,
         '--background-index',
         '--clang-tidy',
-        '--header-insertion=never',
+        '--header-insertion=iwyu',
         '--completion-style=detailed',
         '--query-driver=/nix/store/*-gcc-*/bin/gcc*,/nix/store/*-clang-*/bin/clang*,/run/current-system/sw/bin/cc*',
+        '--log=error',
     },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
     root_markers = { 'compile_commands.json', '.clangd', 'configure.ac', 'Makefile', '.git' },
     capabilities = caps,
     init_options = {
-        fallbackFlags = { '-std=c23' }, -- Default to C23
+        fallbackFlags = { '-std=c++17' }, -- Default to C++17
     },
 }
 
@@ -261,6 +265,10 @@ vim.lsp.config['templ'] = {
     filetypes = { 'templ' },
     root_markers = { 'go.mod', '.git' },
     capabilities = caps,
+}
+
+vim.lsp.config['org'] = {
+-- To enable orgmode completion
 }
 
 vim.filetype.add({
